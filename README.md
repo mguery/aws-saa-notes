@@ -1,8 +1,11 @@
-# aws-saa-notes
+# Amazon Web Services 
 
-Notes from AWS CCP and SAA courses + resources. 
-- Read what I'm using to study here [Study Plan for AWS SAA](https://msguery.net/aws-certified/)
+Read what I'm using to study here [Study Plan for AWS SAA](https://msguery.net/aws-certified/).
+
+Here's a [30-day Study Plan](https://github.com/mguery/aws-saa-notes/blob/main/30-day-study-plan.md) you can follow. 
+
 ---
+
 ## AWS Products and Services
 - Amazon Athena: Query data in S3 using SQL
 - Amazon CloudSearch: Managed search service
