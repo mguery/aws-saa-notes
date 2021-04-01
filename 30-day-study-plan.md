@@ -1,5 +1,7 @@
 # 30 Day Study Plan
 
+Want to add this to your Asana or Trello? Create a new project and [copy and paste this](https://docs.google.com/document/d/1JHnd4H24mK-MZkKWcybJZK-SBdlO8e38zXQwiV9SmTc/edit?usp=sharing) to your board. 
+
 From Stephane Maarek's SAA course - [Link to Udemy](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c02/)
 
 1. Introduction, Code & Slides Download, AWS Fundamentals: IAM & EC2
@@ -32,3 +34,5 @@ From Stephane Maarek's SAA course - [Link to Udemy](https://www.udemy.com/course
 28. JB's Practice Exam 6
 29. Review 
 30. Test day 
+
+More resources: [List of AWS Products and Services](https://github.com/mguery/aws-saa-notes) [How to become AWS Certified](https://msguery.net/aws-certified/), [DevOps Roadmap](https://mguery.github.io/devops-notes) 
