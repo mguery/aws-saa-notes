@@ -136,13 +136,34 @@ SC1 - cold HDD | archive storage, infrequently accessed data
 - for gaming and IoT apps
 - reduces load off of DBs for read intensive w/l. 
 - AWS takes care of OS maint, setup, configuration, backups
-
+- **Redis** - multi-az with failover, RRs to scale reads and has HA, **replication** / Redis AUTH - extra level of sec for your cache, sets pw/token when cluster is created
+- **Memcached** multi-node for partitioning of data (**sharding**), non-persistent, no b/u and restore, multi-threaded archit
+- cache security - all caches in EC support in-flight enc, no IAM auth, IAM pols used for API-level sec / supports SASL-based auth
+- patterns - lazy loading - data is cached, becomes stale in cache / write through - adds or updates data in cache, no stale data / session store - store temp session data in cache using TTL features
 
 ## Route 53
+- scalable and mgd domain name system (DNS). route domains to services/IPs. domain registrar, DNS hosting provider. collection of rules and records to understand how to reach a server thru URLs / .50 per month per hosted zone
+- common records: A - hostname to IPv4, AAAA - hostname to IPv6, CNAME - hostname to hostname, Alias - hn to aws res.
+- can use for public domain names you own or buy. or private dn can be resolved by your inst in your vpcs
+- has LBing aka client LBing, limited health cks
+- routing policy - **simple** - single source, default and no health checks attached, **weighted** - routes traffic to different res based on weightage (route 10% to this res), can attach health cks, good for splitting traffic btwn regions, **latency** - redirects traffic to closest regions for users, use when latency is a priority, evaluated in terms of user to designated AWS region **failover** - redirect to 2nd res, , **geolocation** - rts based on users location, **multi-value** evenly dist traffic, not a sub for having an ELB, up to 8 healthy records are reurned for each mv query
+- DNS records Time to Live (TTL) - mandatory for each DNS record. High TTL (hrs) - less traffic on DNS, possibly outdated records, Low TTL (secs) - more traffic, outdated records for less time, easy to change record 
+- **health checks** - # of hc failed = unhealthy (def is 3) # of hc passed = healthy (def is 3), Default Health Checks Interval - 30 secs, less more $. 15 health checkers will check endpoint health, can integrate hc with CW, can be linked to R53 DNS queries
+- **If you buy your domain on 3rd party website, you can still use Route53**
 
+## Classic Solutions Architecture
+- launching full stack takes time, speed up by instantiating apps quickly.  ec2i - use golden AMI - install apps, os dependencies, etc beforehand and launch your ec2i from golden ami / bootstrap using User Data scripts, hybrid - mix of both 
+- rds db and ebs volumes - restore from ss 
+- typical 3-tier wep app - r53 -> elb (public subnet) -> EC2 (private subnet) -> rds and elasticache (data/private subnet) 
 
+## Elastic Beanstalk
+- mgd service used to run and mng web apps. (paas). autoscales your app to meet demands for devs. select a platform (pythin, php), upload app and run it. 
+- free but pay for instances. your resp for the app code, aws runs it on your behalf and creates res for you (elb, ec2). no setup reqd. 
+- supports node, python, java, go, docker, ruby
+- easier than lightsail (you set up ec2, s3, sns, etc)
+- components - app, app version, env name (ex. dev, text, prod). you deploy app versions to env and can promote app versions to the next env. full control over lifecycle of env.
 
-## S3 
+## S3 (pg 220)
 
 
 
