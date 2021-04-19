@@ -5,7 +5,6 @@
 - **AZs** - 1+ discrete data centers with redundant power, networking, and connectivity, separate from each other = isolated from disasters, high bandwidth and ultra low latency networking
 - **edge locations** - delivering content at high speeds, owned by trusted partners of AWS, used with CloudFront and R53, connects to AWS network, requests to CF and R53 are auto-routed to nearest EL.
 
-
 ## Identity and Access Management (IAM)
 - **users** - user/person with least privileges, assign users to groups 
 - **groups** - group of users, assign permission to groups 
@@ -100,11 +99,9 @@ SC1 - cold HDD | archive storage, infrequently accessed data
 - **Instance Store** - instance store = ephemeral storage. provides faster r+w and more secure. a physically attached to the machine. better i/o perf, good for buffer/cache/temp content, data survives reboot. term inst = inst store lost. cant resize. backups operated by user. 
 - **RAID options** - mount vols in parallel in RAID settings. long as OS supports it. RAID 0, 1, 5, 6. (5 and 6 not recommended) / RAID 0 to inc perf. RAID 1 to inc fault tolerance
 
-
 ## Elastic File System (EFS)
 - scalable network file system (NFS) thats mounted to many ec2 at the same time. works with ec2i in multi-az in a vpc. highly avail, expensive (3x GP2), pay per use, autoscales. for linux based ami not windows / POSIX file system. petabyte. uses SG to control access to efs. enc at rest using kms 
-- for content mgmt, web serving, data sharing 
-- 
+- for content mgmt, web serving, data sharing  
 
 ## Relational Database Service (RDS)
 - managed DB svc. data with meaning (like excel sheets). allows to create/setup a RDB in aws. can scale anytime - vertically - scale up/down or horizontally - scale in/out. supports mysql, postgres, mariadb, oracle, SQl server.
